@@ -1,0 +1,232 @@
+@font-face {
+    font-family: LibreFranklin-Light;
+    src: url(../font/LibreFranklin-Light.ttf);
+}
+
+@font-face {
+    font-family: LibreFranklin-SemiBold;
+    src: url(../font/LibreFranklin-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: LibreFranklin-Bold;
+    src: url(../font/LibreFranklin-Bold.ttf);
+}
+
+:root {
+    --Blue: hsl(223, 87%, 63%);
+    --Blue-Lighter: hsl(223, 82%, 69%);
+
+    --Pale-Blue: hsl(223, 100%, 88%);
+    --Light-Red: hsl(354, 100%, 66%);
+
+    --White: hsl(0, 0%, 100%);
+    --Gray:  hsl(0, 0%, 59%);
+    --Very-Dark-Blue: hsl(209, 33%, 12%);
+
+    --LibreFranklin-Light:'LibreFranklin-Light';
+    --LibreFranklin-SemiBold:'LibreFranklin-SemiBold';
+    --LibreFranklin-Bold:'LibreFranklin-Bold';
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 20px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2em;
+    gap: 0.25rem;
+}
+
+#ping-logo {
+    margin-bottom: 1rem;
+}
+
+h1 {
+    color: var(--Gray);
+    font-family: var(--LibreFranklin-Light);
+}
+
+h1 span {
+    color: var(--Very-Dark-Blue);
+}
+
+.sub {
+    color: var(--Very-Dark-Blue);
+    font-family: var(--LibreFranklin-Light);
+}
+
+.input-flex {
+    display: flex;
+    width: 600px;
+    justify-content: center;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+#input-email {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    gap: 0.125rem;
+    width: 70%;
+}
+
+.email {
+    padding: 1em;
+    border-radius: 50px;
+    color: var(--Gray);
+    border: 1px solid var(--Gray);
+    font-family: var(--LibreFranklin-SemiBold);
+}
+
+.email:is(:focus,:active) {
+    outline: none;
+}
+
+small {
+    display: none;
+}
+
+/* Error */
+
+.error-text {
+    display: block;
+    position: absolute;
+    font-family: var(--LibreFranklin-Light);
+    font-style: italic;
+    font-size: 12px;
+    top: 50px;
+    left: 10px;
+    color: var(--Light-Red);
+}
+
+.email-error {
+    padding: 1em;
+    border-radius: 50px;
+    color: black;
+    border: 1px solid var(--Light-Red);
+    font-family: var(--LibreFranklin-SemiBold);
+}
+
+#submit-btn {
+    cursor: pointer;
+    color:hsl(0, 0%, 100%);
+    background-color: var(--Blue);
+    padding: 1em;
+    border-radius: 50px;
+    margin: 2rem 0;
+    border: none;
+    width: 30%;
+    transition: all 300ms ease;
+    font-family: var(--LibreFranklin-SemiBold);
+    box-shadow: 2.5px 2.5px 2.5px 2.5px var(--Pale-Blue);
+}
+
+#submit-btn:is(:hover,:focus) {
+    background-color: var(--Blue-Lighter);
+}
+
+#dashboard {
+    width: 600px;
+    height: 350px;
+}
+
+.icon-flex {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.social-icon {
+    cursor: pointer;
+    background-color: var(--White);
+    border: 1px solid var(--Pale-Blue);
+    border-radius: 5rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.25em;
+}
+
+.social-logo {
+    width: 20px;
+    height: 20px;
+    fill: var(--Blue);
+}
+
+.social-icon:is(:hover,:focus) {
+    background-color: var(--Blue);
+    border: 1px solid transparent;
+}
+
+.social-icon:is(:hover,:focus) .social-logo {
+    fill: var(--White);
+}
+
+#copyright {
+    margin-top: 1rem;
+    font-size: 12px;
+    font-family: var(--LibreFranklin-Light);
+    color: var(--Gray);
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+@media screen and (min-width:375px) and (max-width:630px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    .sub {
+        margin-top: 1rem;
+    }
+
+    .input-flex {
+        margin-top: 2rem;
+        flex-direction: column;
+        width: 350px;
+    }
+
+    #input-email, #submit-btn {
+        width: 100%;
+    }
+
+    #submit-btn {
+        margin-top: 0.5rem;
+    }
+
+    #dashboard {
+        width: 350px;
+        object-fit: contain;
+    }
+
+    /* Error */
+
+    .email-error {
+        margin-bottom: 2rem;
+    }
+
+    .error-text {
+        left: 100px;
+    }
+}
